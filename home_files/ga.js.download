@@ -1,0 +1,681 @@
+'use strict'
+$(document).ready(function() {
+
+/*================================================================
+	Tracks da H0me
+=================================================================*/
+
+	//slider home imagem
+	$('#banner-principal .slider img').on('click', function(){
+    var nome = $(this).attr('alt');
+    ga('send','event','brdistribuidora/home','clique', 'imagem-'.concat(nome) );
+    console.log(nome);
+  });
+
+  //slider home buttom
+  $('#banner-principal .slider button').on('click', function(){
+    var nomeButton = $(this).html(); 
+    ga('send','event','brdistribuidora/home','clique', 'button-'.concat(nomeButton));
+    console.log(nomeButton);
+  });
+
+  //Home Veiculo saiba mais
+  $('.veiculo-saiba-mais').on('click', function(){
+    ga('send','event','brdistribuidora/home','clique','Veiculo Saiba Mais' );
+    console.log('Veiculo Saiba Mais');
+  });
+
+  //Home ganhe-pontos-por-beneficios
+  $('.ganhe-pontos-por-beneficios').on('click', function(){
+    ga('send','event','brdistribuidora/home','clique','Ganhe pontos por benefícios' );
+    console.log('Ganhe pontos por benefícios');
+  });
+
+  //Home conheca-solucoes
+  $('.conheca-solucoes').on('click', function(){
+    ga('send','event','brdistribuidora/home','clique','Conheca nossas solucões');
+    console.log('Conheca nossas solucões');
+  });
+
+  //aviacao-saiba-mais
+  $('.aviacao-saiba-mais').on('click', function(){
+    ga('send','event','brdistribuidora/home','clique','Aviacao Saiba Mais');
+    console.log('Aviacao Saiba Mais');
+  });
+
+
+  //CONHEÇA NOSSOS PRODUTOS E SERVIÇOS
+  $('#produtos-servicos a ').on('click', function(){
+    var nome = $(this).attr('title');
+    ga('send','event','brdistribuidora/home','clique','conheça-'.concat(nome));
+    console.log(nome);
+  });
+
+  //noticias
+  $('#noticias-destaque a ').on('click', function(){
+    var link = $(this).attr('title');
+    ga('send','event','brdistribuidora/home','clique','noticia-'.concat(link));
+    console.log(link);
+  });
+
+/*================================================================
+Tracks da header
+=================================================================*/
+//Menu links principais
+  $('#header-content nav a').on('click', function(){
+    var linkMenu = $(this).html(); 
+    ga('send','event','brdistribuidora/header','clique'.concat(linkMenu));
+    console.log(linkMenu);
+  });
+
+  //Menu links sub menu
+  $('#header-content nav .submenu a').on('click', function(){
+    var linkMenu = $(this).html(); 
+    ga('send','event','brdistribuidora/header','clique'.concat(linkMenu));
+    console.log(linkMenuu);
+  });
+
+  //Menu redes sociais header
+  $('#header-content .redes-sociais a').on('click', function(){
+    var link = $(this).attr('title');
+    ga('send','event','brdistribuidora/header','clique'.concat(link));
+    console.log(link);
+  });
+
+  //Menu de canais 
+  $('#pre-header nav a').on('click', function(){
+    var link = $(this).attr('title');
+    ga('send','event','brdistribuidora/header','clique'.concat(link));
+    console.log(link);
+  });
+
+
+  //busca
+  $('#header-content #lupa-busca').on('click', function(){
+    ga('send','event','brdistribuidora/header','clique', 'Busca do site',);
+    console.log('Busca do site');
+  });
+
+/*================================================================
+Tracks da Footer
+=================================================================*/
+  //Menu redes sociais footer
+  $('#footer-content .redes-sociais a').on('click', function(){
+    var link = $(this).attr('title');
+    ga('send','event','brdistribuidora/footer','clique'.concat(link));
+    console.log(link);
+  });
+
+  //Transparencia
+  $('#footer-content #transparencia').on('click', function(){
+    ga('send','event','brdistribuidora/footer', 'clique', 'Transparencia');
+    console.log('transparencia');
+  });
+
+  //Menu footer
+  $('#footer-content nav a').on('click', function(){
+    var link = $(this).attr('title');
+    ga('send','event','brdistribuidora/footer','clique'.concat(link));
+    console.log(link);
+  });
+
+  //Transparencia
+  $('#footer-content #mapa-site').on('click', function(){
+    ga('send','event','brdistribuidora/footer', 'clique', '+ Mapa do Site');
+    console.log('transparencia');
+  });
+
+  /*================================================================
+    menu lateral das paginas
+  =================================================================*/
+  //imagem rotativa cartão petrobras
+    $('.slider img').on('click', function(){
+      var nome = $(this).attr('alt');       
+      ga('send','event','brdistribuidora/cartao-petro','clique','imagem-'.concat(nome));
+      console.log('imagem-'.concat(nome));    
+    });
+
+  /*================================================================
+   cartão petrobras
+  =================================================================*/
+
+    //conheca-todos
+    $('#conheca-todos').on('click', function(){
+      ga('send','event','brdistribuidora/cartao-petro','clique','conheca-todos');
+      console.log('conheca-todos');
+    });   
+
+    //veja-como-funciona
+    $('#veja-como-funciona').on('click', function(){
+      ga('send','event','brdistribuidora/cartao-petro','clique','veja-como-funciona');
+      console.log('veja-como-funciona');
+    });
+
+    //rapido-facil
+    $('#rapido-facil').on('click', function(){
+      ga('send','event','brdistribuidora/cartao-petro','clique','rapido-facil');
+      console.log('rapido-facil');
+    });
+
+    //acompanhe-proposta
+     $('.servicos a.btn').on('click', function(){
+      var nomeButton = $(this).html(); 
+      ga('send','event','brdistribuidora/cartao-petro','clique',nomeButton);
+      console.log(nomeButton);
+    });
+
+    //duvidas cartão petrobfras
+    $('.dropdown-content span#cartao').on('click', function(){
+      var nome = $(this).html();
+      ga('send','event','brdistribuidora/cartao-petro','clique','duvidas-'.concat(nome));
+      console.log('duvidas-'.concat(nome));
+    });
+
+  /*================================================================
+    serviços
+  =================================================================*/
+
+    //solicite-agora
+    $('#solicite-agora').on('click', function(){
+      ga('send','event','brdistribuidora/servicos','clique','solicite-agora');
+      console.log('solicite-agora');
+    }); 
+
+    //orientações serviços
+    $('.dropdown-content span#servicos').on('click', function(){
+      var nome = $(this).html();
+      ga('send','event','brdistribuidora/servicos','clique','orientações-'.concat(nome));
+      console.log('orientações-'.concat(nome));
+    });
+
+  /*================================================================
+    gasolina
+  =================================================================*/
+
+   //gasolina podium 
+    $('.tipos-gasolina #gasolina-podium').on('click', function(){
+      ga('send','event','brdistribuidora/gasolina','clique','gasolina-podium');
+      console.log('gasolina-podium');
+    });
+
+    //gasolina-petrobras-grid   
+    $('.tipos-gasolina #gasolina-petrobras-grid').on('click', function(){
+      ga('send','event','brdistribuidora/gasolina','clique','gasolina-petrobras-grid');
+      console.log('gasolina-petrobras-grid');
+    });
+
+    //gasolina comum
+    $('.tipos-gasolina #gasolina-comum').on('click', function(){
+      ga('send','event','brdistribuidora/gasolina','clique','gasolina-comum');
+      console.log('gasolina-comum');
+    });
+
+    //duvidas gasolina
+    $('.dropdown-content span#duvidas-gasolina').on('click', function(){
+      var nome = $(this).html();
+      ga('send','event','brdistribuidora/gasolina','clique','duvidas-'.concat(nome));
+      console.log('duvidas-'.concat(nome));
+    });
+
+
+  /*================================================================
+    gas natural 
+  =================================================================*/
+  //download-ficha
+    $('#download-ficha').on('click', function(){
+      ga('send','event','brdistribuidora/gas-natural','clique','download-ficha');
+      console.log('download-ficha');
+    });
+
+    //gas natural
+    $('.dropdown-content span#gas-natural').on('click', function(){
+      var nome = $(this).html();
+      ga('send','event','brdistribuidora/gas-natural','clique','duvidas-'.concat(nome));
+      console.log('duvidas-'.concat(nome));
+    });
+
+
+  /*================================================================
+    br mania
+  =================================================================*/
+
+  //veja-360
+    $('#veja-360').on('click', function(){
+      ga('send','event','brdistribuidora/br-mania','clique','veja-360');
+      console.log('veja-360');
+    }); 
+
+    //compartilhe
+    $('#compartilhe').on('click', function(){
+      ga('send','event','brdistribuidora/br-mania','clique','compartilhe');
+      console.log('compartilhe');
+    });
+
+
+  /*================================================================
+    promocoes-brmania
+  =================================================================*/
+   //encontre promocoes
+    $('#busca-promocoes #encontre-promocoes').on('change', function(){
+     ga('send','event','brdistribuidora/promocoes-brmania','clique','encontre-promocoes' );
+     console.log('encontre-promocoes');
+    });
+
+    //estado beneficios
+    $('#busca-promocoes #estado').on('change', function(){
+     ga('send','event','brdistribuidora/promocoes-brmania','clique','estado' );
+     console.log('estado');
+    });
+
+    //cidade beneficios
+    $('#busca-promocoes #cidade').on('change', function(){
+     ga('send','event','brdistribuidora/promocoes-brmania','clique','cidade' );
+     console.log('cidade');
+    });
+
+    //buscar beneficios
+    $('#busca-promocoes .btn').on('click', function(){
+      ga('send','event','brdistribuidora/promocoes-brmania','clique','buscar' );
+      console.log('buscar');
+    });
+
+    //lojas participantes
+    // $('.side-text').on('click', function(){
+    //   ga('send','event','brdistribuidora/promocoes-brmania','clique', 'Loja BR Mania participante' );
+    //   console.log('Loja BR Mania participante');
+    // });
+
+    //tudo-isso
+    $('.list-topics span.name-topic').on('click', function(){
+      var nome = $(this).html(); 
+      ga('send','event','brdistribuidora/promocoes-brmania','clique','tudo-isso-'.concat(nome));
+      console.log(nome);
+    });  
+
+  /*================================================================
+    solicite-cartao
+  =================================================================*/
+    //formulario
+    $('#formulario').on('click', function(){
+      ga('send','event','brdistribuidora/solicite-carta','clique','formulario' );
+      console.log('formulario');
+    });
+
+    //contrato
+    $('#contrato').on('click', function(){
+      ga('send','event', 'brdistribuidora/solicite-cartao','clique','contrato');
+      console.log('contrato');
+    });
+
+    //cartoes-adicionais
+    $('#cartoes-adicionais').on('click', function(){
+      var $nomeButton = $(this).html(); 
+      ga('send','event','brdistribuidora/solicite-cartao','clique','cartoes-adicionais' );
+      console.log('cartoes-adicionais');
+    });
+
+    //2-via-fatura
+    $('#2-via-fatura').on('click', function(){
+      var $nomeButton = $(this).html(); 
+      ga('send','event','brdistribuidora/solicite-cartao','clique','2-via-fatura' );
+      console.log('2-via-fatura');
+    });
+
+  /*================================================================
+   recompensas
+  =================================================================*/
+    //recompensas
+    $('#regulamento').on('click', function(){
+      ga('send','event','brdistribuidora/recompensas','regulamento','clique');
+      console.log('regulamento');
+    });
+
+  /*================================================================
+   beneficios
+  =================================================================*/
+
+    $('#busca-parceiros #segmento').on('change', function(){
+       ga('send','event','brdistribuidora/beneficios','clique','segmento' );
+       console.log('segmento');
+    });
+
+
+    $('#busca-parceiros #estado').on('change', function(){
+       ga('send','event','brdistribuidora/beneficios','clique','estado' );
+       console.log('estado');
+    });
+
+      //cidade beneficios
+    $('#busca-parceiros #cidade').on('change', function(){
+       ga('send','event','brdistribuidora/beneficios','clique','cidade' );
+       console.log('cidade');
+    });
+
+    //buscar beneficios
+    $('#busca-parceiros .btn').on('click', function(){
+      ga('send','event','brdistribuidora/beneficios','clique','buscar' );
+      console.log('buscar');
+    });
+    //lista de vantagens
+    $('.lista-vantagens a').on('click', function(){
+      var nomeButton = $(this).html(); 
+      ga('send','event','brdistribuidora/beneficios','clique', nomeButton);
+      console.log(nomeButton);
+    });
+
+    /*================================================================
+     oleo-combustivel
+    =================================================================*/
+    //
+    $('.link-pdf span').on('click', function(){
+      var nome = $(this).html(); 
+      ga('send','event','brdistribuidora/oleo-combustivel','clique','ficha-'.concat(nome));
+      console.log('ficha-'.concat(nome));
+    }); 
+
+
+    /*================================================================
+     br-aviation
+    =================================================================*/
+    $('#form-abastecer #ondeAbastecer').on('change', function(){
+       ga('send','event','brdistribuidora/br-aviation','clique','estado' );
+       console.log('estado');
+    });
+
+    $('#form-abastecer #ondeAbastecer').on('change', function(){
+       ga('send','event','brdistribuidora/br-aviation','clique','cidade' );
+       console.log('cidade');
+    });
+
+    //buscar br-aviation
+    $('#form-abastecer .btn').on('click', function(){
+      ga('send','event','brdistribuidora/br-aviation','clique','buscar' );
+      console.log('buscar');
+    });
+
+    /*================================================================
+     aviation-center
+    =================================================================*/
+    $('#busca-postos .hasCustomSelect#estado').on('change', function(){
+       ga('send','event','brdistribuidora/aviation-center','clique','estado' );
+       console.log('estado');
+    });
+
+    /*================================================================
+     cadastro
+    =================================================================*/
+     //Contato campos
+    $('#form-contact input').on('click', function(){
+      var nome = $(this).attr('name');  
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-'.concat(nome) );
+      console.log('campo-'.concat(nome));
+    });
+
+    //Contato genero
+    $('#form-contact #field-gender').on('change', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-genero' );
+      console.log('campo-genero');
+    });
+
+     //Contato cargo
+    $('#form-contact #field-state').on('change', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-estado' );
+      console.log('campo-estado');
+    });
+
+     //Contato cargo
+    $('#form-contact #field-cargo').on('change', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-cargo' );
+      console.log('campo-cargo');
+    });
+
+     //Contato tipo de cargo
+    $('#form-contact #field-type').on('change', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-tipo-de-cargo' );
+      console.log('campo-tipo-de-cargo');
+    });
+
+      //buscar br-aviation
+    $('#form-contact .btn').on('click', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','enviar' );
+      console.log('enviar');
+    });
+
+    /*================================================================
+     premios
+    =================================================================*/
+
+    //filtro
+    $('#filtro #filtro').on('change', function(){
+      ga('send','event','brdistribuidora/premios','clique','filtro' );
+      console.log('filtro');
+    });
+
+     //brindes
+    $('.award a').on('click', function(){
+      var nome = $(this).attr('title');  
+      ga('send','event','brdistribuidora/premios','clique','premio-'.concat(nome) );
+      console.log('premio-'.concat(nome));
+    });
+
+    /*================================================================
+     clube
+    =================================================================*/
+
+    //club
+    $('#busca-rede-aeroportos #estado').on('change', function(){
+       ga('send','event','brdistribuidora/aviation-club','clique','estado' );
+       console.log('estado');
+    });
+
+    //buscar br-aviation
+    $('#busca-rede-aeroportos .btn').on('click', function(){
+      ga('send','event','brdistribuidora/aviation-club','clique','buscar' );
+      console.log('buscar');
+    });
+
+     //Contato campos
+    $('#form-login input').on('click', function(){
+      var nome = $(this).attr('name');  
+      ga('send','event','brdistribuidora/aviation-club','clique','campo-'.concat(nome) );
+      console.log('campo-'.concat(nome));
+    });
+
+      //buscar br-aviation
+    $('#form-login .btn').on('click', function(){
+      ga('send','event','brdistribuidora/aviation-club','clique','enviar' );
+      console.log('enviar');
+    });
+   
+     //esqueceu-senha
+    $('#form-login .forgot-password').on('click', function(){
+      ga('send','event','brdistribuidora/home','clique','esqueceu-senha' );
+      console.log('esqueceu-senha');
+    });
+
+
+    /*================================================================
+      laboratorio-central
+    =================================================================*/
+    //Contato campos laboratorio-central
+    $('#solicitacao-assistencia input').on('click', function(){
+      var nome = $(this).attr('name');  
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-'.concat(nome));
+      console.log('campo-'.concat(nome));
+    });
+
+     //Contato cargo laboratorio-central
+    $('#solicitacao-assistencia #field-state').on('change', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-estado' );
+      console.log('campo-estado');
+    });
+
+     //Contato pefil laboratorio-central
+    $('#solicitacao-assistencia #field-profile').on('change', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-perfil' );
+      console.log('campo-perfil');
+    });
+
+     //Contato descripition laboratorio-central
+    $('#solicitacao-assistencia textarea#field-description').on('click', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-description' );
+      console.log('description');
+    });
+
+      //envio de laboratorio-central
+    $('#solicitacao-assistencia .btn').on('click', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','enviar' );
+      console.log('enviar');
+    });
+    
+
+    /*================================================================
+      laboratorio-central
+    =================================================================*/
+     //lista de produtos
+    $('.check-list a').on('click', function(){
+      var none = $(this).html(); 
+      ga('send','event','brdistribuidora/rede-postos','clique', 'produtos-'.concat(nome));
+      console.log('produtos-'.concat(nome));
+    });
+
+    
+
+    /*================================================================
+       estagios
+    =================================================================*/
+    //estagios estado
+    $('#busca-vagas #estado').on('change', function(){
+      ga('send','event','brdistribuidora/estagios','clique','estado' );
+      console.log('estado');
+    });
+
+     //estagios cidade
+    $('#busca-vagas #cidade').on('change', function(){
+      ga('send','event','brdistribuidora/estagios','clique','cidade' );
+      console.log('cidade');
+    });
+
+    //envio de laboratorio-central
+    $('#busca-vagas .btn').on('click', function(){
+      ga('send','event','brdistribuidora/estagios','clique','buscar' );
+      console.log('buscar');
+    });
+     // todos os principios
+    $('a#principles').on('click', function(){
+      ga('send','event','brdistribuidora/home','clique','todos-principios');
+      console.log('todos-principios');
+    });
+
+    /*================================================================
+      sugestao-pauta
+    =================================================================*/
+    //busque por assunto
+    $('#form-search-by-subject #assuntob62').on('change', function(){
+      ga('send','event','brdistribuidora/sugestao-pauta','clique','assunto' );
+      console.log('assunto');
+    });
+
+    /*================================================================
+      calendario-eventos
+    =================================================================*/
+    //opção calendario-eventos
+    $('#busca-parceiros #cultura').on('change', function(){
+      ga('send','event','brdistribuidora/calendario-eventos','clique','cultura' );
+      console.log('cultura');
+    });
+
+    //opção calendario-eventos
+    $('#busca-parceiros #eventos').on('change', function(){
+      ga('send','event','brdistribuidora/calendario-eventos','clique','eventos' );
+      console.log('eventos');
+    });
+
+    //data calendario-eventos
+    $('#busca-parceiros .date-pick').on('click', function(){
+      ga('send','event','brdistribuidora/calendario-eventos','clique','data' );
+      console.log('eventos');
+    });
+
+    /*================================================================
+      noticias
+    =================================================================*/
+    //busque por assunto noticias
+    $('#busca-assunto #assuntob80').on('change', function(){
+      ga('send','event','brdistribuidora/noticias','clique','assunto' );
+      console.log('assunto');
+    });
+
+    //list-news
+    $('.list-news .title-news').on('click', function(){
+      var link = $(this).html(); 
+      ga('send','event','brdistribuidora/noticias','clique','noticias-'.concat(link));
+      console.log('noticias-'.concat(link));
+    });
+
+    /*================================================================
+      duvidas
+    =================================================================*/
+
+    //duvidas Mais buscadas
+    $('.list-tags a').on('click', function(){
+      var nome = $(this).html();  
+      ga('send','event','brdistribuidora/duvidas','clique','mais-buscadas-'.concat(nome));
+      console.log('mais-buscadas-'.concat(nome));
+    });
+
+    //busque por assunto noticias
+    $('#form-search-by-subject #assunto').on('change', function(){
+      ga('send','event','brdistribuidora/duvidas','clique','assunto' );
+      console.log('assunto');
+    });
+
+    /*================================================================
+      ouvidoria
+    =================================================================*/
+    //campos do formulario de contato
+    $('#contate-ouvidoria input').on('click', function(){
+      var nome = $(this).attr('name');  
+      ga('send','event','brdistribuidora/ouvidoria','clique','campo-'.concat(nome));
+      console.log('campo-'.concat(nome));
+    });
+
+    //seleção de assunto
+    $('#contate-ouvidoria .hasCustomSelect').on('change', function(){
+      ga('send','event','brdistribuidora/ouvidoria','clique','assunto' );
+      console.log('assunto');
+    });
+
+     //Contato ouvidora textarea
+    $('#contate-ouvidoria textarea#mensagem').on('click', function(){
+      ga('send','event','brdistribuidora/cadastro-aviation','clique','campo-mensagem' );
+      console.log('mensagem');
+    });
+
+    /*================================================================
+      auditorias
+    =================================================================*/
+
+     //seleção de ano
+    $('#form-content-by-year .hasCustomSelect').on('change', function(){
+      ga('send','event','brdistribuidora/ouvidoria','clique','ano' );
+      console.log('ano');
+    });
+
+    /*================================================================
+      convenios
+    =================================================================*/
+
+     //seleção de assanounto
+    $('#form-search-by-subject .hasCustomSelect').on('change', function(){
+      ga('send','event','brdistribuidora/convenios','clique','ano' );
+      console.log('ano');
+    });
+
+    //seleção de assanounto
+    $('#form-search-by-subject #mes').on('change', function(){
+      ga('send','event','brdistribuidora/convenios','clique','mes' );
+      console.log('mes');
+    });
+
+});

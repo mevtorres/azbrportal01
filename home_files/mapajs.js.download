@@ -1,0 +1,99 @@
+
+var map;
+var arrayPin = new Array();
+
+function initMap() {
+
+    var uluru = {lat: -30.0277, lng: -51.2287};
+    var uluru2 = {lat: -30.0257, lng: -51.2287};
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 5,
+      center: uluru,
+      styles: mapStyle
+    });
+
+
+    loadJSON('js/mapa.json', callback);
+}
+
+
+   
+function addPin(pinData){
+    var uluru = {lat: pinData.latitude, lng: pinData.longitude};
+    var marker = new google.maps.Marker({
+        position: uluru,
+        icon: 'img/eventos/pin.png',
+        map: map,
+        customInfo: pinData
+    });
+    arrayPin.push(marker);
+
+
+
+    var contentString = '<div class="content">'+
+            '<div class="bodyContent">'+
+            '<h5>' + pinData.title + '</h5>'+
+            '<h5>' + pinData.cidade + '</h5>'
+            '</div>'+
+            '</div>';
+
+    
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+      marker.setIcon('img/eventos/selector.png');
+      for (var i = arrayPin.length - 1; i >= 0; i--) {
+          var currentPin = arrayPin[i];
+          if (currentPin!=marker) {
+            if (marker.customInfo.title==currentPin.customInfo.title) {
+                currentPin.setIcon('img/eventos/selector.png')
+            }
+            else
+                currentPin.setIcon('img/eventos/pin.png')
+          }
+      }
+
+      $('.pin-evento').hide();
+      $('.pin-evento.'+pinData.nome).slideDown();
+    });
+
+} 
+
+    
+
+function loadJSON(url,callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', url, true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+ var mapa_json_data;
+
+function callback(response){
+    mapa_json_data = JSON.parse(response);
+    console.log("response:" , response);
+    createPins(mapa_json_data.eventos);
+}
+
+function createPins(pinsArrays){
+    console.log("arrays:" , pinsArrays);
+    var currentPin;
+    for (i=0; i<pinsArrays.length; i++){
+        currentPin = pinsArrays[i];
+        console.log('i', currentPin);
+        addPin(currentPin);
+
+    }
+}
+ 
+
+

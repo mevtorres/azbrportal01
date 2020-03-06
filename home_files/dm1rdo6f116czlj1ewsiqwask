@@ -1,0 +1,8 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <svg id="a" width="24" height="24" preserveAspectRatio="xMinYMin meet">
+      <path d="M14 3H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h9l4 3V4a1 1 0 0 0-1-1zM3 10V5h10v6.11L11.52 10H3zm2-3h6v1H5V7z" class="small-icon"/>
+    </svg>
+  </defs>
+  <use xlink:href="#a" width="24" height="24" fill="rgba(0,0,0,.6)"/>
+</svg>

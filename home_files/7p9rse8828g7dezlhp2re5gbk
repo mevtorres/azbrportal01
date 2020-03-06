@@ -1,0 +1,8 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <svg id="a" width="24" height="24" preserveAspectRatio="xMinYMin meet" class="artdeco-icon">
+      <path d="M15.7 7.3L9 1v4H7c-3.9 0-7 3.1-7 7v3h1.4c0-2.2 1.9-4 4.1-4H9v4l6.7-6.3c.4-.3.4-1 0-1.4zM11 10.6V9H5.6c-1.2 0-2.4.4-3.4 1.1C3.1 8.2 4.9 7 7 7h4V5.4L13.7 8 11 10.6z" class="small-icon"/>
+    </svg>
+  </defs>
+  <use xlink:href="#a" width="24" height="24" fill="rgba(0,0,0,.6)"/>
+</svg>
